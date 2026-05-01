@@ -600,7 +600,8 @@ class TimeTrackerApp(ctk.CTk):
             try:
                 entries, projects = database.sync_from_cloud()
                 def done():
-                    self._refresh()
+                    self._refresh_tree()
+                    self._refresh_summary()
                     parts = []
                     if entries:
                         parts.append(f"{entries} time entr{'y' if entries == 1 else 'ies'}")
