@@ -1,0 +1,26 @@
+name: TimeTracker
+options:
+  bundleIdPrefix: com.pbj
+  deploymentTarget:
+    iOS: "16.0"
+  xcodeVersion: "15"
+targets:
+  TimeTracker:
+    type: application
+    platform: iOS
+    sources:
+      - path: TimeTracker
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.pbj.timetracker
+        SWIFT_VERSION: "5.9"
+        INFOPLIST_FILE: TimeTracker/Info.plist
+    info:
+      path: TimeTracker/Info.plist
+      properties:
+        UILaunchStoryboardName: LaunchScreen
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: false
+          UISceneConfigurations: {}

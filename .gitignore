@@ -1,0 +1,8 @@
+.env
+__pycache__/
+*.pyc
+*.db
+invoices/
+*.log
+ios/TimeTracker.xcodeproj/
+ios/TimeTracker/App/Config.swift
