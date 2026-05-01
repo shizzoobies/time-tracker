@@ -6,3 +6,5 @@ invoices/
 *.log
 ios/TimeTracker.xcodeproj/
 ios/TimeTracker/App/Config.swift
+.DS_Store
+build/

@@ -16,9 +16,12 @@ targets:
         SWIFT_VERSION: "5.9"
         INFOPLIST_FILE: TimeTracker/Info.plist
         DEVELOPMENT_TEAM: 7P986JMA56
+        CODE_SIGN_STYLE: Automatic
     info:
       path: TimeTracker/Info.plist
       properties:
+        CFBundleShortVersionString: "1.0"
+        CFBundleVersion: "2"
         UILaunchStoryboardName: LaunchScreen
         UISupportedInterfaceOrientations:
           - UIInterfaceOrientationPortrait
