@@ -15,6 +15,7 @@ targets:
         PRODUCT_BUNDLE_IDENTIFIER: com.pbj.timetracker
         SWIFT_VERSION: "5.9"
         INFOPLIST_FILE: TimeTracker/Info.plist
+        DEVELOPMENT_TEAM: 7P986JMA56
     info:
       path: TimeTracker/Info.plist
       properties:
