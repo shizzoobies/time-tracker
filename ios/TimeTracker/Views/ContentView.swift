@@ -58,6 +58,11 @@ struct ContentView: View {
                     Label("Month", systemImage: "chart.bar")
                 }
 
+            InvoiceView()
+                .tabItem {
+                    Label("Invoice", systemImage: "doc.text.fill")
+                }
+
             SettingsView()
                 .tabItem {
                     Label("Settings", systemImage: "gear")
