@@ -73,7 +73,7 @@ Best regards,
             .navigationTitle("Invoice")
             .navigationBarTitleDisplayMode(.large)
             .onAppear { loadHours() }
-            .onChange(of: displayDate) { _, _ in loadHours() }
+            .onChange(of: displayDate) { _ in loadHours() }
             .overlay(alignment: .bottom) {
                 if showCopied {
                     HStack {
