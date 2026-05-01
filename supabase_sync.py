@@ -13,8 +13,8 @@ from datetime import datetime, timezone
 # Config
 # ---------------------------------------------------------------------------
 
-_SUPABASE_URL = os.environ.get("SUPABASE_URL", "").rstrip("/")
-_SUPABASE_KEY = os.environ.get("SUPABASE_KEY", "")
+_SUPABASE_URL = os.environ.get("SUPABASE_URL", "https://uouikuifeherablbhzsy.supabase.co").rstrip("/")
+_SUPABASE_KEY = os.environ.get("SUPABASE_KEY", "sb_publishable_yQtGhRNiB8hmJ22hzfQSyQ_rK-ecV7G")
 
 _TIMEOUT = 8  # seconds
 
