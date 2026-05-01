@@ -208,6 +208,7 @@ class TimeTrackerApp(ctk.CTk):
             ("PDF",          self._export_pdf,    "#c4006e", "#8b004d", "white"),
             ("Projects",     self._open_projects, "#ff43a4", "#e0007a", "#1c1917"),
             ("Invoice",      self._open_invoice,  "#b8882a", "#c49830", "#1c1917"),
+            ("☁ Sync",       self._sync_from_cloud, "#2d6a4f", "#1b4332", "white"),
         ]:
             ctk.CTkButton(
                 bar, text=label, width=80, height=28,
@@ -590,6 +591,31 @@ class TimeTrackerApp(ctk.CTk):
 
     def _open_invoice(self):
         InvoiceDialog(self)
+
+    def _sync_from_cloud(self):
+        """Pull iOS-created entries from Supabase into the local SQLite database."""
+        btn_text = "☁ Sync"
+
+        def do_sync():
+            try:
+                entries, projects = database.sync_from_cloud()
+                def done():
+                    self._refresh()
+                    parts = []
+                    if entries:
+                        parts.append(f"{entries} time entr{'y' if entries == 1 else 'ies'}")
+                    if projects:
+                        parts.append(f"{projects} project{'s' if projects != 1 else ''}")
+                    msg = (f"Imported {' and '.join(parts)} from your iOS app."
+                           if parts else
+                           "Everything is up to date — no new entries from iOS.")
+                    messagebox.showinfo("Sync Complete", msg, parent=self)
+                self.after(0, done)
+            except Exception as exc:
+                self.after(0, lambda: messagebox.showerror(
+                    "Sync Failed", str(exc), parent=self))
+
+        threading.Thread(target=do_sync, daemon=True).start()
 
 
 # ── Entry Dialog ──────────────────────────────────────────────────────────────
